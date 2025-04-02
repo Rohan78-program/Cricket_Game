@@ -1,5 +1,13 @@
 let choices=document.querySelectorAll(".choice");
 
+let score={
+    uwon:0,
+    ulost:0,
+    tied:0,
+    cwon:0,
+    clost:0,
+};
+
 //getting computer choice
 getComputerChoice=()=>{
     const choices=["bat","ball","stump"];
@@ -14,13 +22,17 @@ showWinner=(userWin,userChoice,computerChoice)=>{
     document.querySelector("#msg").style.color="white";
 
     if(userWin){
-        document.querySelector("#user").innerHTML="Win";
-        document.querySelector("#computer").innerHTML="Defeat";
+        score.uwon++;
+        score.clost++;
+        document.querySelector("#user").innerHTML=`Win (${score.uwon} times)`;
+        document.querySelector("#computer").innerHTML=`Defeat (${score.clost} times)`;
         document.querySelector("#draw").innerHTML="User is the winner!";
         document.querySelector("#draw").style.color="green";
     }else{
-        document.querySelector("#user").innerHTML="Defeat";
-        document.querySelector("#computer").innerHTML="Win";
+        score.ulost++;
+        score.cwon++;
+        document.querySelector("#user").innerHTML=`Defeat (${score.ulost} times)`;
+        document.querySelector("#computer").innerHTML=`Win (${score.cwon} times)`;
         document.querySelector("#draw").innerHTML="Computer is the winner!";
         document.querySelector("#draw").style.color="green";
     }
@@ -34,9 +46,10 @@ const playGame=(userChoice)=>{
 
 
     if(userChoice===computerChoice){
+        score.tied++;
         document.querySelector("#user").innerHTML="Same";
         document.querySelector("#computer").innerHTML="same";
-        document.querySelector("#draw").innerHTML="It's a Tie!";
+        document.querySelector("#draw").innerHTML=`It's a Tie! (${score.tied} times)`;
         document.querySelector("#draw").style.color="yellow";
         document.querySelector("#draw").style.fontSize="30px";
     }else{
