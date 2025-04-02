@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+    <link rel="icon" href="cric.ico" type="image/x-icon">
+    <link rel="stylesheet" href="cricket.css">
+</head>
+<body>
+    <div class="container">
+        <div id="bat" class="choice"><img src="bat.png" alt="bat"></div>
+        <div id="ball" class="choice"><img src="ball.png" alt="ball"></div>
+        <div id="stump" class="choice"><img src="stump.png" alt="stump"></div>
+    </div>
+
+    <div class="scoreboard">
+        <h1>Scoreboard</h1>
+        <div class="team">
+            <div class="score-container">
+                <p class="score">Computer :: <span id="computer"></span></p>
+                <p class="score" style="margin-left: 50px;">User :: <span id="user"></span></p>
+            </div>
+        </div>
+        <p id="msg"></p>
+        <p id="draw"></p>
+    </div>
+    <script src="cricket.js"></script>
+</body>
+</html>
