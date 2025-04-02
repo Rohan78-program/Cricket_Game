@@ -18,7 +18,7 @@ getComputerChoice=()=>{
 //showing winner
 showWinner=(userWin,userChoice,computerChoice)=>{
 
-    document.querySelector("#msg").innerHTML=`User chose ${userChoice} and Computer chose ${computerChoice}`;
+    document.querySelector("#msg").innerHTML=`User chosen ${userChoice} and Computer chosen ${computerChoice}`;
     document.querySelector("#msg").style.color="white";
 
     if(userWin){
